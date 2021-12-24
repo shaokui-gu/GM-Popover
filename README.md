@@ -1,2 +1,3 @@
-# GM-Popover
-A popover extension for GM
+# GM+Popover
+
+A description of this package.
