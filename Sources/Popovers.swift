@@ -328,7 +328,7 @@ open class GMPopover {
     
     static let shared = GMPopover()
     private init(){}
-    var currentPopover:UIViewController?
+    weak var currentPopover:UIViewController?
     var isShowingPopover:Bool {
         return currentPopover != nil
     }
@@ -361,6 +361,10 @@ open class GMPopover {
 }
 
 extension GM {
+    
+    public static var showingPopover:Bool {
+        return GMPopover.shared.isShowingPopover
+    }
     
     @available(iOS 13.0, *)
     public static func showPopover<contentView:GMSwiftUIPageView>(_ view:contentView, contentSize:CGSize = CGSize(width:200, height:174), layoutMargins:UIEdgeInsets = .zero, backgroundColor:UIColor? = .white, sourceRect:CGRect = .zero, onDissmiss:VoidCallBack? = nil) {
