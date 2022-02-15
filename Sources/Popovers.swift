@@ -313,6 +313,7 @@ open class GMPopoverView : UIViewController, GMPopOverUsable {
 open class GMPopoverSwiftUIView<Content>: UIHostingController<Content> where Content : View {
     public override init(rootView: Content) {
         super.init(rootView: rootView)
+        view.backgroundColor = .clear
     }
     open override func viewDidLoad() {
         super.viewDidLoad()
