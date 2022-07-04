@@ -337,11 +337,11 @@ open class GMPopover {
     @available(iOS 13.0, *)
     public func showPopover<contentView:View>(_ view:contentView, contentSize:CGSize = CGSize(width:200, height:174), layoutMargins:UIEdgeInsets = .zero, backgroundColor:UIColor? = .white, sourceRect:CGRect = .zero, arrowDirection:UIPopoverArrowDirection = .none, shouldDismissOnTap: Bool = true, onDissmiss:VoidCallBack? = nil) {
         let content = GMPopoverSwiftUIView(rootView: view)
-        self.showPopover(content, contentSize: contentSize, layoutMargins: layoutMargins, backgroundColor: backgroundColor, sourceRect: sourceRect, arrowDirection: arrowDirection, onDissmiss: onDissmiss)
+        self.showPopover(content, contentSize: contentSize, layoutMargins: layoutMargins, backgroundColor: backgroundColor, sourceRect: sourceRect, arrowDirection: arrowDirection, shouldDismissOnTap: shouldDismissOnTap,  onDissmiss: onDissmiss)
     }
     
     public func showPopover(_ view:UIViewController, contentSize:CGSize = CGSize(width:200, height:174), layoutMargins:UIEdgeInsets = .zero, backgroundColor:UIColor? = .white, sourceRect:CGRect = .zero, arrowDirection:UIPopoverArrowDirection = .none, shouldDismissOnTap: Bool = true, onDissmiss:VoidCallBack? = nil) {
-        let popover = GMPopoverView(view, contentSize: contentSize, layoutMargins: layoutMargins, arrowDirection: arrowDirection, onDissmiss: onDissmiss)
+        let popover = GMPopoverView(view, contentSize: contentSize, layoutMargins: layoutMargins, arrowDirection: arrowDirection, shouldDismissOnTap:  shouldDismissOnTap, onDissmiss: onDissmiss)
         popover.view.backgroundColor = backgroundColor
         let viewController = GM.topPage()?.controller ?? GM.rootPage()!.controller!
         popover.showPopover(sourceView: viewController.view, sourceRect:sourceRect)
