@@ -293,6 +293,7 @@ open class GMPopoverView : UIViewController, GMPopOverUsable {
         self.arrowDirection = arrowDirection
         self.layoutMargins = layoutMargins
         self.dismissHandler = onDissmiss
+        GMPopOverDelegation.shared.shouldDismissOnOutsideTap = shouldDismissOnTap
         super.init(nibName: nil, bundle: nil)
         view.addSubview(content.view)
         addChild(content)
