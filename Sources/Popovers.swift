@@ -293,7 +293,6 @@ open class GMPopoverView : UIViewController, GMPopOverUsable {
         self.arrowDirection = arrowDirection
         self.layoutMargins = layoutMargins
         self.dismissHandler = onDissmiss
-        GMPopOverDelegation.shared.shouldDismissOnOutsideTap = shouldDismissOnTap
         super.init(nibName: nil, bundle: nil)
         view.addSubview(content.view)
         addChild(content)
@@ -345,7 +344,7 @@ open class GMPopover {
         let popover = GMPopoverView(view, contentSize: contentSize, layoutMargins: layoutMargins, arrowDirection: arrowDirection, shouldDismissOnTap:  shouldDismissOnTap, onDissmiss: onDissmiss)
         popover.view.backgroundColor = backgroundColor
         let viewController = GM.topPage()?.controller ?? GM.rootPage()!.controller!
-        popover.showPopover(sourceView: viewController.view, sourceRect:sourceRect)
+        popover.showPopover(sourceView: viewController.view, sourceRect:sourceRect, shouldDismissOnTap: shouldDismissOnTap)
         self.currentPopover = popover
     }
     
