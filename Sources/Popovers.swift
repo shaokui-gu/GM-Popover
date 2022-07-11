@@ -143,6 +143,7 @@ extension GMPopOverUsable where Self: UIViewController {
         naviController.popoverPresentationController?.backgroundColor = popOverBackgroundColor
         naviController.popoverPresentationController?.permittedArrowDirections = arrowDirection
         naviController.popoverPresentationController?.popoverLayoutMargins = layoutMargins
+        naviController.popoverPresentationController?.passthroughViews = []
 
         return naviController
     }
@@ -155,6 +156,7 @@ extension GMPopOverUsable where Self: UIViewController {
         popoverPresentationController?.backgroundColor = popOverBackgroundColor
         popoverPresentationController?.permittedArrowDirections = arrowDirection
         popoverPresentationController?.popoverLayoutMargins = layoutMargins
+        popoverPresentationController?.passthroughViews = []
     }
     
     public func setupPopover(sourceView: UIView, sourceRect: CGRect? = nil) {
