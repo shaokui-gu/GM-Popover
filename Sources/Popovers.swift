@@ -360,6 +360,7 @@ open class GMPopover {
     
     public func dismiss(animated:Bool = true, completion:VoidCallBack? = nil) {
         self.currentPopover?.dismiss(animated: animated, completion: completion)
+        self.currentPopover = nil
     }
 }
 
